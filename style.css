@@ -1,0 +1,1124 @@
+:root{
+   --title-color:#000AFF;
+   --title-font-size: 3.125rem;
+  --title-font-weight: 400;
+  --nav-item-font: 1.25rem;
+  --title-font: 'Oswald';
+   
+
+}
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+ 
+}
+
+body{
+   background-color: black;
+}
+
+.container {
+   width: 70%;
+   margin: auto;
+}
+
+
+
+nav {
+   margin-top:1rem;
+   display: flex;
+justify-content: space-between;
+align-items: center;
+}
+ul {
+   display: flex;
+}
+.logo h1 {
+   color: var(--title-color);
+   font-size: var(--title-font-size);
+font-weight: var(--title-font-weight);
+font-family: var(--title-font);
+}
+
+ul a {
+   padding-left: 5.1875rem;
+   text-decoration: none;
+   font-family: 'Poppins';
+   letter-spacing: 0.11875rem;
+   font-size: var(--nav-item-font);
+   color: rgba(255, 255, 255, 0.50);
+}
+
+ul a:hover {
+   color: #0075FF;
+   font-size: 1.35rem;
+   transition: all 0.5s;
+}
+
+#menu-bar {
+   display: none;
+}
+
+ul label {
+   display: none;
+   cursor: pointer;
+}
+
+/* hero section */
+
+.heroSection{
+   margin-top: 3rem;
+   background-image: url(images/binary\ background\ numbers.svg);
+  display: flex;
+  justify-content: space-between;
+
+}
+.mainImage img {
+   height: 50rem;
+}
+
+.myInfo {
+margin: auto;
+}
+
+.myInfo h1 {
+   color: #FFF;
+      font-size: 4.375rem;
+      font-family: Poppins;
+      font-weight: 500;
+}
+
+.myInfo h2 {
+   font-size: 9.375rem;
+      font-weight: 400;
+      font-family: 'Oswald', sans-serif;
+      background-image: linear-gradient(to left,#0075FF,
+         #000AFF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+         margin-block-start: -2rem;
+         margin-inline-start: -0.5rem;
+   
+}
+
+.myInfo p {
+   color: rgba(255, 255, 255, 0.50);
+      font-size: 1.25rem;
+      font-family: Poppins;
+      font-weight: 400;
+}
+
+.getCv {
+   margin-top: 5rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+.getcv a {
+   text-decoration: none;
+   color: #000;
+      font-size: 1.125rem;
+      font-family: Poppins;
+      font-weight: 400;
+      margin: auto;
+     
+}
+
+.sendmsg a {
+   text-decoration: none;
+   color: #FFF;
+      font-size: 1.125rem;
+      font-family: Poppins;
+      font-weight: 400;
+}
+
+
+
+.getcv {
+   width: 8.5rem;
+      height: 2.875rem;
+      border-radius: 6.25rem;
+         background: linear-gradient(248deg, #000AFF 0%, #0075FF 100%);
+         display: flex;
+            align-items: center;
+            justify-content: center;
+      
+}
+
+.sendmsg {
+   border-radius: 6.25rem;
+      border: 1px solid #FFF;
+      width: 10.5625rem;
+         height: 2.875rem;
+               display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 0 1rem;
+}
+
+
+.sendmsg img {
+   width: 0.97794rem;
+      height: 0.75888rem;
+}
+
+/* hero section ends */
+
+.mySkills {
+   margin-top: 2.5rem;
+}
+.mySkillTitle h1 {
+   color: var(--title-color);
+   font-size: var(--title-font-size);
+   font-family: var(--title-font);
+   font-weight: var(--title-font-weight);
+}
+
+
+.skills {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(20px,3fr));
+   justify-content: space-between;
+   justify-items: center;
+      gap: 2rem;
+      
+     
+}
+
+.network h1 {
+   position: absolute;
+   top: 3.87rem;
+   left: 4rem;
+   color: #FFF;
+      font-size: 1.5625rem;
+      font-family: Poppins;
+      font-weight: 500;
+}
+
+
+.network p {
+   position: absolute;
+      top: 6.69rem;
+   color: rgba(255, 255, 255, 0.50);
+      text-align: center;
+      font-size: 1rem;
+      font-family: Poppins;
+      font-weight: 400;
+}
+
+.network {
+   margin-top: 8rem;
+   border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.10);
+      width: 20rem;
+         height: 16.4375rem;
+         position: relative;
+}
+
+.network img {
+   position: absolute;
+      top: -4.4rem;
+   left: 6rem;
+}
+.ethical h1 {
+   position: absolute;
+   top: 3.87rem;
+   left: 4rem;
+   color: #FFF;
+    
+      font-size: 1.5625rem;
+      font-family: Poppins;
+      font-weight: 500;
+}
+
+
+.ethical p {
+   position: absolute;
+      top: 6.69rem;
+      text-align: center;
+   color: rgba(255, 255, 255, 0.50);
+      font-size: 1rem;
+      font-family: Poppins;
+      font-weight: 400;
+}
+
+.ethical {
+   margin-top: 8rem;
+   border-radius: 0.5rem;
+   border-radius: 0.5rem;
+      background: rgba(0, 117, 255, 0.10);
+   width: 20rem;
+         height: 16.4375rem;
+         position: relative;
+}
+
+.ethical img {
+   position: absolute;
+      top: -4.4rem;
+      left: 6rem;
+}
+
+
+
+
+
+/* hero section ends' */
+
+/* clients */
+
+
+.clients {
+   margin-top: 6.8rem;
+}
+
+.clientTitle h1 {
+   color: var(--title-color);
+   font-size: var(--title-font-size);
+   font-family: var(--title-font);
+   font-weight: var(--title-font-weight);
+}
+
+.items {
+   padding: 0 2.5rem;
+   margin-top: 3.5rem;
+   display: flex;
+   justify-content: space-between;
+  
+}
+.items img {
+height: 2rem;
+}
+
+
+.slider {
+   margin-top: 4.5rem;
+   display: flex;
+   justify-content: center;
+}
+
+
+/* clients ends */
+
+/* work erperience */
+.experience {
+   margin-top: 6.8rem;
+
+}
+.expTitle h1 {
+      
+      color: var(--title-color);
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+      font-weight: var(--title-font-weight);
+   }
+
+.expList{
+   display: flex;
+   justify-content: space-between;
+}
+   .platform h1 a {
+     
+      color: #0075FF;
+         font-size: 3.125rem;
+         font-family: Poppins;
+         font-weight: 300;
+   }
+   .platform h1 {
+      padding-top: 2.6rem;
+      color: #ffffff;
+         font-size: 3.125rem;
+         font-family: Poppins;
+         font-weight: 500;
+   }
+   .platform h2 {
+      padding-left: 2rem;
+   color: #FFF;
+      font-size: 1.875rem;
+      font-family: Poppins;
+      font-weight: 400;
+   }
+   .platform h3 {
+         padding-left: 2rem;
+   color: rgba(255, 255, 255, 0.75);
+      font-size: 1.875rem;
+      font-family: 'Oswald';
+      font-weight: 300;
+      letter-spacing: 0.1125rem;
+   }
+
+
+   /* experience ends */
+
+
+   /* about me */
+.aboutMe {
+   margin-top: 6.8rem;
+}
+   .aboutTitle h1  {
+   
+       color: var(--title-color);
+       font-size: var(--title-font-size);
+       font-family: var(--title-font);
+       font-weight: var(--title-font-weight);
+    }
+
+    .slogan h1 {
+      color: #FFF;
+         font-size: 3.75rem;
+         font-family: Poppins;
+         font-weight: 600;
+         line-height: 111%;
+    }
+
+
+.follow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.follow a {
+   text-decoration: none;
+color: rgba(255, 255, 255, 0.75);
+   font-size: 1.875rem;
+   font-family: Poppins;
+   font-weight: 300;
+   line-height: 111%;
+   letter-spacing: 0.1875rem;
+}
+
+.follow img {
+   width: 1.25rem;
+      height: 1.25rem;
+}
+
+
+.row hr {
+background: rgba(255, 255, 255, 0.75);
+
+}
+
+
+.about p {
+   color: rgba(255, 255, 255, 0.75);
+      font-size: 1.5625rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 164.5%;
+}
+
+
+
+.aboutContainer {
+   margin-top: 3rem;
+   background-image: url(images/Cybersecurity-Transformation-PD20-018-960\ 1.svg);
+background-repeat: repeat;
+   display: flex;
+   justify-content: space-between;
+gap: 6rem;
+}
+
+.slogan {
+   display: flex;
+      width: 24.625rem;
+      flex-direction: column;
+      
+}
+
+.withFollow {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+/* end oof about */
+
+
+/* whatsnext */
+.whatsnext{
+   margin: auto;
+   margin-top: 6.8rem;
+   text-align: center;
+   width: 65%;
+}
+.whatsnext h1 {
+   color: var(--title-color);
+      font-size: var(--title-font-size);
+      font-family: var(--title-font);
+      font-weight: var(--title-font-weight);
+
+}
+
+.whatsnext h2 {
+   padding-top: 2rem;
+   color: #FFF;
+      font-size: 4.375rem;
+      font-family: Poppins;
+      font-weight: 600;
+      line-height: 111%;
+}
+
+.whatsnext p {
+   padding-top: 2rem;
+   color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      font-size: 1.875rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 123.5%;
+      letter-spacing: 0.0375rem;
+}
+
+.sendmessage {
+   margin-top : 4.75rem;
+   justify-content: center;
+}
+.sendmessage a {
+   
+   text-decoration: none;
+color: rgba(255, 255, 255, 0.75);
+   font-size: 1.875rem;
+   font-family: Poppins;
+   font-weight: 300;
+   line-height: 111%;
+   letter-spacing: 0.1875rem;
+}
+
+.sendmessage hr {
+width: 19.5rem;
+   margin: auto;
+}
+
+
+/* end of letswork together */
+
+
+/* credit  */
+
+.credit h1 {
+   margin-top: 20rem;
+   margin-bottom: 5rem;
+   color: #FFF;
+      font-size: 1.875rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 111%;
+      letter-spacing: 0.1875rem;
+}
+
+
+
+
+/* to make responsive */
+
+
+/* for tablets */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+ 
+   :root {
+      --title-font-size: 2.5rem;
+   }
+
+
+
+
+.container {
+      width: 85%;
+      margin: auto;
+   }
+
+.checkbtn {
+   display: block;
+}
+
+.menuItems {
+   display: inline-block;
+   position: fixed;
+   display: grid;
+   grid-template-columns: repeat(1,1fr);
+   width: 50%;
+   top: 150px;
+   left: -100%;
+gap: 2rem;
+transition: all 0.5s;
+}
+
+#check:checked ~ .menuItems {
+right: 10%;
+}
+
+/* skills */
+
+.skills {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   margin: auto;
+   gap: 1rem;
+   justify-items: center;
+   justify-content: center;
+
+}
+
+
+/* hero section */
+
+.heroSection {
+   margin-top: 2rem;
+   position: relative;
+   margin-bottom: 5rem;
+}
+
+
+
+.mySkills {
+   margin-top: 35rem;
+}
+.mainImage img {
+   height: 30rem;
+   position: absolute;
+   right: 0;
+}
+.myInfo {
+   position: absolute;
+   top: 6rem;
+}
+
+.myInfo h1 {
+   font-size: 2.375rem;
+}
+
+.myInfo h2 {
+   font-size: 7.375rem;
+   margin-block-start: -3rem;
+   margin-inline-start: -0.5rem;
+
+}
+
+.myInfo p {
+   margin-block-start: -1rem;
+   font-size: 1rem;
+   width: 23rem;
+}
+
+.getCv {
+   margin-top: 4rem;
+   display: inline-flex;
+   gap: 1rem;
+}
+
+.getcv a {
+   font-size: 0.8rem;
+
+}
+
+.sendmsg a {
+   font-size: 0.8rem;
+}
+
+
+.getcv {
+   width: 6rem;
+   height: 2rem;
+
+}
+
+.sendmsg {
+   width: 8rem;
+   height: 2rem;
+}
+
+
+.sendmsg img {
+   width: 0.97794rem;
+   height: 0.75888rem;
+}
+
+
+/* navbar */
+
+ul label {
+   display: initial;
+}
+
+ul {
+   width: 60%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   position: absolute;
+   top: 4rem;
+   right: 5%;
+   display: none;
+transition: all 0.5s;
+}
+
+ul a {
+   padding: 0;
+   font-size: 1rem;
+}
+
+#menu-bar:checked~ul {
+   width: 60%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   position: absolute;
+   top: 1rem;
+   left: 7.5%;
+   background-color: #000;
+   padding: 1rem 0;
+   transition: all 0.5s;
+
+}
+
+#menu-bar:checked~label img {
+   transform: rotate(180deg);
+   opacity: 50%;
+   transition: all 0.5s;
+}
+
+/* clients */
+
+.items {
+   margin-top: 2.5rem;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+justify-items: center;
+
+}
+
+.slider {
+   margin-top: 2rem;
+   height: 0.5rem;
+}
+
+/* work exp */
+
+.expList {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   justify-items: center;
+}
+
+.platform h1 a {
+   font-size: 2.5rem;
+}
+
+.platform h1 {
+   font-size: 2.5rem;
+}
+
+.platform h2 {
+   padding-left: 1.3rem;
+   font-size: 1.5rem;
+}
+
+.platform h3 {
+   padding-left: 1.3rem;
+   font-size: 1.5rem;
+}
+
+/* about me */
+
+
+.aboutContainer {
+   margin-top: 3rem;
+   background-image: url(images/Cybersecurity-Transformation-PD20-018-960\ 1.svg);
+   background-repeat: repeat;
+   display: inline-block;
+   justify-content: space-between;
+   gap: 6rem;
+}
+
+
+
+.slogan h1 {
+   font-size: 2.5rem;
+}
+
+
+.follow {
+   margin-top: 2rem;
+   margin-bottom: 0.5rem;
+   display: inline-flex;
+   gap: 1rem;
+}
+
+.follow a {
+   font-size: 1.5rem;
+}
+
+.follow img {
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
+.row hr {
+   width: 17rem;
+}
+
+.about p {
+   margin-top: 4rem;
+   font-size: 1.4rem;
+}
+
+/* whatsnext */
+.whatsnext {
+   margin-top: 4rem;
+   width: 84%;
+}
+
+
+.whatsnext h2 {
+   padding-top: 1.5rem;
+   font-size: 3rem;
+}
+
+.whatsnext p {
+   padding-top: 1rem;
+   font-size: 1.3rem;
+}
+
+.sendmessage {
+   margin-top: 2.75rem;
+}
+
+.sendmessage a {
+   font-size: 1.3rem;
+   margin-bottom: 0.3rem;
+}
+
+.sendmessage hr {
+   width: 15rem;
+   margin: auto;
+}
+
+
+.sendmessage img {
+   height: 1.3rem;
+}
+
+
+
+.credit h1 {
+   text-align: center;
+   margin-top: 7rem;
+   margin-bottom: 3rem;
+   font-size: 0.8rem;
+}
+
+
+}
+
+
+
+
+/* for mobiles */
+
+
+@media screen and (max-width: 767px) {
+
+:root{
+   --title-font-size: 2rem;
+}
+
+
+.container {
+      width: 90%;
+      margin: auto;
+   }
+
+   /* skills */
+
+.skills {
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   margin: auto;
+   gap: 1rem;
+ justify-items: center;
+
+}
+
+.network {
+  width: 100%;
+}
+.network h1 {
+left: 5.1rem;
+}
+.ethical h1 {
+left: 5.5rem;
+}
+.ethical img {
+left: 7.5rem;
+}
+.network img {
+left: 7.5rem;
+}
+
+.ethical {
+   width: 100%;
+}
+
+/* clients */
+.items {
+   padding: 0 2.5rem;
+   margin-top: 2.5rem;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 2rem;
+   justify-content: space-between;
+
+}
+
+.slider {
+   margin-top: 2rem;
+   display: flex;
+   justify-content: center;
+   height: 0.3rem;
+}
+
+
+/* .experience */
+
+.expList {
+   display: grid;
+   grid-template-columns: repeat(1,1fr);
+   justify-content: space-between;
+}
+
+.platform h1 a {
+   font-size: 2.125rem;
+}
+
+.platform h1 {
+   font-size: 2.125rem;
+}
+
+.platform h2 {
+   padding-left: 1.3rem;
+   font-size: 1.2rem;
+}
+
+.platform h3 {
+   padding-left: 1.3rem;
+   font-size: 1.2rem;
+}
+
+
+/* about */
+
+
+
+
+
+.aboutContainer {
+   margin-top: 3rem;
+   background-image: url(images/Cybersecurity-Transformation-PD20-018-960\ 1.svg);
+   background-repeat: repeat;
+   display: inline-block;
+   justify-content: space-between;
+   gap: 6rem;
+}
+
+
+
+      .slogan h1 {
+         font-size: 2rem;
+      }
+
+
+.follow {
+margin-top: 2rem;
+margin-bottom: 0.5rem;
+display: inline-flex;
+gap: 1rem;
+}
+
+.follow a {
+   font-size: 1rem;
+}
+
+.follow img {
+   width: 1rem;
+   height: 1rem;
+}
+
+.row hr {
+   width: 12rem;
+}
+
+.about p {
+   margin-top: 4rem;
+   font-size: 1rem;
+}
+
+
+      /* hero section */
+
+.heroSection {
+   margin-top: 2rem;
+   position: relative;
+margin-bottom: 5rem;
+}
+
+
+.myInfo {
+ position: absolute;
+ top: 30%;
+}
+
+.mainImage img {
+   height: 30rem;
+}
+
+.myInfo h1 {
+   font-size: 2.375rem;
+}
+
+.myInfo h2 {
+   font-size: 7.375rem;
+   margin-block-start: -3rem;
+   margin-inline-start: -0.5rem;
+
+}
+
+.myInfo p {
+      margin-block-start: -1rem;
+   font-size: 0.8rem;
+   font-weight: 300;
+}
+
+.getCv {
+   margin-top: 4rem;
+display: inline-flex;
+   gap: 1rem;
+}
+
+.getcv a {
+   font-size: 0.8rem;
+
+}
+
+.sendmsg a {
+font-size: 0.8rem;
+}
+
+
+.getcv {
+   width: 6rem;
+   height: 2rem;
+
+}
+
+.sendmsg {
+   width: 8rem;
+      height: 2rem;
+}
+
+
+.sendmsg img {
+   width: 0.97794rem;
+   height: 0.75888rem;
+}
+
+
+/* navbar */
+ul label {
+   display: initial;
+}
+
+ul {
+   width: 60%;
+   display:grid;
+  grid-template-columns: repeat(3,1fr);
+   gap: 1rem;
+      position: absolute;
+   top: 4rem;
+   right: 5%;
+   display: none;
+  
+}
+
+ul a {
+   padding: 0;
+   font-size: 0.8rem;
+}
+
+#menu-bar:checked ~ ul {
+   width: 60%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   position: absolute;
+   top: 1rem;
+  left:  5%;
+  background-color: #000;
+  padding: 1rem 0;
+transition: all 0.5s;
+
+}
+#menu-bar:checked ~ label img {
+transform: rotate(180deg);
+opacity: 50%;
+transition: all 0.5s;
+}
+
+
+
+
+/* whats next */
+
+.whatsnext {
+   margin-top: 4rem;
+   width: 88%;
+}
+
+
+.whatsnext h2 {
+   padding-top: 1.5rem;
+   font-size: 2.375rem;
+}
+
+.whatsnext p {
+   padding-top: 1rem;
+   font-size: 1rem;
+}
+
+.sendmessage {
+   margin-top: 2.75rem;
+}
+
+.sendmessage a {
+   font-size: 1rem;
+}
+
+.sendmessage hr {
+   width: 11rem;
+   margin: auto;
+}
+
+
+.sendmessage img {
+   height: 1rem;
+}
+
+
+/* credit */
+
+.credit h1 {
+   text-align: center;
+   margin-top: 7rem;
+   margin-bottom: 3rem;
+   font-size: 0.8rem;
+}
+
+
+}
