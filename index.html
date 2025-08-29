@@ -1,209 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Poppins:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
-    <title>himalbhandari</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himal Bhandari | Cybersecurity Expert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0075FF;
+            --secondary: #000AFF;
+            --accent: #00D9FF;
+            --dark: #0A0A1A;
+            --darker: #050510;
+            --text: #FFFFFF;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(11, 12, 30, 0.8);
+            --glow: 0 0 10px rgba(0, 117, 255, 0.7);
+            --title-font: 'Oswald', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--darker);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 119, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(0, 208, 255, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, var(--darker), var(--dark));
+            color: var(--text);
+            font-family: var(--body-font);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 119, 255, 0.05) 0px,
+                    rgba(0, 119, 255, 0.05) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            position: relative;
+        }
+
+        .logo h1 {
+            font-family: var(--title-font);
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: var(--glow);
+            letter-spacing: 1px;
+        }
+
+        .logo::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: var(--accent);
+            font-weight: 300;
+            margin-left: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        .heroSection {
+            display: flex;
+            align-items: center;
+            min-height: 90vh;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h2 {
+            font-family: var(--title-font);
+            font-size: 5rem;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: var(--glow);
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 117, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 117, 255, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--text);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 117, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: perspective(800px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: perspective(800px) rotateY(0);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), transparent);
+            filter: blur(60px);
+            opacity: 0.3;
+            z-index: -1;
+            animation: pulse 8s infinite alternate;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--title-font);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 117, 255, 0.2);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 117, 255, 0.1);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Clients Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+            margin-bottom: 40px;
+        }
+
+        .client-logo {
+            filter: grayscale(100%) brightness(200%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            max-width: 120px;
+            height: auto;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%) brightness(100%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 117, 255, 0.2);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--card-bg);
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -10px;
+            border-right: 1px solid rgba(0, 117, 255, 0.2);
+            border-top: 1px solid rgba(0, 117, 255, 0.2);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+            border-left: 1px solid rgba(0, 117, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 117, 255, 0.2);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -48px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -48px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 117, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(5, 5, 16, 0.8);
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 117, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: -1;
+        }
+
+        .contact-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 0.3; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h2 {
+                font-size: 4rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                z-index: 999;
+                gap: 30px;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .heroSection {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+            
+            .hero-content p {
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image img {
+                transform: none;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px;
+            }
+            
+            .timeline-dot {
+                left: 21px !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                border-left: 1px solid rgba(0, 117, 255, 0.2);
+                border-bottom: 1px solid rgba(0, 117, 255, 0.2);
+                border-right: none;
+                border-top: none;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-     <nav>
-      <div class="logo"><h1>#Mountain</h1></div>
-      <input type="checkbox" id="menu-bar">
-      <label for="menu-bar"><img src="images/Polygon 1.svg" alt=""></label>
-<ul>
-  
-   <li><a href="https://www.fiverr.com/mountain248">HIRE ME</a></li>
-   <li><a href="https://www.facebook.com/mountainv2.0">CONTACT</a></li>
-   <li><a href="">ABOUT</a></li>
-</ul>
+        <nav>
+            <div class="logo"><h1>#Mountain</h1></div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#"><i class="fas fa-briefcase"></i> HIRE ME</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> ABOUT</a></li>
+            </ul>
+        </nav>
 
-     </nav>
-      <!-- nav end -->
-
-      <!-- hero section starts -->
-      <div class="heroSection">
-        <div class="myInfo">
-          <h1>I AM</h1>
-          <h2>HIMAL</h2>
-          <p>
-            Professional cyber security expert and Golang Developer . Contributing in cyber security
-            filed from more than 4 years. My goal is to achieve all the security
-            measures out there and pentesting using golang.
-          </p>
-          <div class="getCv">
-            <div class="getcv"><a href="">GET CV</a></div>
-            <div class="sendmsg">
-              <a href="">SEND MESSAGE</a> <img src="images/send.svg" alt="" />
+        <!-- Hero Section -->
+        <section class="heroSection">
+            <div class="hero-content">
+                <h1>I AM</h1>
+                <h2>HIMAL BHANDARI</h2>
+                <p>
+                    Professional cyber security expert and Golang Developer. Contributing to the cyber security
+                    field for more than 4 years. My goal is to implement all security
+                    measures and conduct pentesting using Golang.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> GET CV
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> SEND MESSAGE
+                    </a>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="mainImage"><img src="images/myimg.png" alt="" /></div>
-      </div>
-
-      <!-- hero section ends -->
-
-      <!-- my skills -->
-
-      <div class="mySkills">
-        <div class="mySkillTitle">
-          <h1>MY SKILLS</h1>
-        </div>
-        <div class="skills">
-          <div class="network">
-            <img src="images/gis_network.svg" alt="" />
-            <h1>Network Security</h1>
-            <p>
-              Proficiency in securing computer networks, including knowledge of
-              firewalls, intrusion detection systems (IDS), virtual private
-              networks (VPNs), and network architecture.
-            </p>
-          </div>
-          <div class="ethical">
-            <img src="images/hack.svg" alt="" />
-            <h1>Ethical Hacking</h1>
-            <p>
-              Ability to identify vulnerabilities in computer systems and
-              networks through ethical hacking and penetration testing
-              techniques. Understanding of various tools and methodologies used
-              in these practices.
-            </p>
-          </div>
-          <div class="network">
-            <img src="images/crypto.svg" alt="" />
-            <h1>Cryptography</h1>
-            <p>
-              Understanding of cryptographic algorithms, encryption techniques,
-              and digital signatures. Ability to implement secure cryptographic
-              protocols and systems.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- skills ends
- -->
-
-      <!-- clients -->
-      <div class="clients">
-        <div class="clientTitle">
-          <h1>CLIENTS</h1>
-        </div>
-        <div class="items">
-          <img src="images/amazon.svg" alt="" />
-          <img src="images/google.svg" alt="" />
-          <img src="images/microsoft.svg" alt="" />
-          <img src="images/alibaba.svg" alt="" />
-        </div>
-
-        <div class="slider">
-          <img src="images/slider.svg" alt="" />
-        </div>
-      </div>
-
-      <!-- clients ends -->
-
-      <!-- work experience -->
-
-      <div class="experience">
-        <div class="expTitle">
-          <h1>WORK EXPERIENCE</h1>
-        </div>
-        <div class="expList">
-          <div class="platform">
-            <h1><a>|</a> Google</h1>
-            <h2>As an Ethical Hacker</h2>
-            <h3>Dec 2021-Present</h3>
-          </div>
-
-          <div class="platform">
-            <h1><a>|</a> Alibaba</h1>
-            <h2>As an Security Expert</h2>
-            <h3>Aug 2019-2020</h3>
-          </div>
-
-          <div class="platform">
-            <h1><a>|</a> Startech</h1>
-            <h2>As an Ethical Hacker</h2>
-            <h3>Jul 2020-Present</h3>
-          </div>
-        </div>
-      </div>
-      <!-- end of exp -->
-
-      <!-- about me -->
-
-      <div class="aboutMe">
-        <div class="aboutTitle">
-          <h1>ABOUT ME</h1>
-        </div>
-
-        <div class="aboutContainer">
-          <div class="withFollow">
-            <div class="slogan">
-              <h1>Live today, prepare for tomorrow</h1>
+            <div class="hero-image">
+                <img src="image&auto=format&fit=crop&w=600&q=80" alt="Himal Bhandari">
             </div>
-            <div class="followMe">
-              <div class="follow">
-                <a href="">FOLLOW ME ON</a>
-                <img src="images/Vector.svg" alt="" />
-              </div>
-              <div class="row">
-                <hr />
-              </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2 class="section-title">MY SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Security</h3>
+                    <p>
+                        Proficiency in securing computer networks, including knowledge of
+                        firewalls, intrusion detection systems (IDS), virtual private
+                        networks (VPNs), and network architecture.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Ethical Hacking</h3>
+                    <p>
+                        Ability to identify vulnerabilities in computer systems and
+                        networks through ethical hacking and penetration testing
+                        techniques. Understanding of various tools and methodologies used
+                        in these practices.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Cryptography</h3>
+                    <p>
+                        Understanding of cryptographic algorithms, encryption techniques,
+                        and digital signatures. Ability to implement secure cryptographic
+                        protocols and systems.
+                    </p>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="about">
+        <!-- Clients Section -->
+        <section class="section">
+            <h2 class="section-title">CLIENTS</h2>
+            <div class="clients-grid">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="client-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="client-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" class="client-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Alibaba.svg" alt="Alibaba" class="client-logo">
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+            <h2 class="section-title">WORK EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Google</h3>
+                        <h4>As an Ethical Hacker</h4>
+                        <p>Dec 2021 - Present</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Alibaba</h3>
+                        <h4>As a Security Expert</h4>
+                        <p>Aug 2019 - 2020</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Startech</h3>
+                        <h4>As an Ethical Hacker</h4>
+                        <p>Jul 2020 - Present</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Live today, prepare for tomorrow</h2>
+                    <p>
+                        Himal Bhandari, also known as TheMountain or #Mountain. I've been
+                        in the cybersecurity industry for a long time and have helped
+                        secure over 50+ enterprises against cyber threats. With the goal
+                        of securing cyberspace, I am an active member of CryptoGen Nepal with other
+                        like-minded individuals, which is a Nepal-based cybersecurity firm
+                        that has also won the ICT Startup Award.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p>
+                        I am a community member of Nepal's largest community of ethical hackers, "Pentester Nepal"
+                        and the Nepal Chapter Leader for OWASP (Open Web Application
+                        Security Project). We organize cyber security events, raise
+                        awareness, share knowledge, and train people about cyber security
+                        and potential cyber threats.
+                    </p>
+                    <p>
+                        My expertise includes network security, ethical hacking, cryptography,
+                        and developing security tools using Golang. I'm passionate about
+                        creating a safer digital world and helping organizations protect
+                        their assets from cyber threats.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>Let's Work Together</h2>
             <p>
-              Himal Bhandari, also known as TheMountain or #Mountain. I've been
-              in the cybersecurity industry for a long time and have helped
-              secure over 50+ enterprises against cyber threats. With the goal
-              of securing cyberspace, I am a active member of  CryptoGen Nepal with other
-              like-minded individuals, which is a Nepal-based cybersecurity firm
-              that has also won the ICT Startup Award. I am the community member of
-              Nepal's largest community of ethical hackers, "Pentester Nepal"
-              and the Nepal Chapter Leader for OWASP (Open Web Application
-              Security Project). We organize cyber security events, raise
-              awareness, share knowledge, and train people about cyber security
-              and potential cyber threats.
+                If you'd like to talk about a project you want help with or need
+                advice about cybersecurity, just drop me a message at
+                itsmemountain@gmail.com. I'm currently available for security
+                consulting, penetration testing, and secure code development.
             </p>
-          </div>
-        </div>
-      </div>
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> SEND MESSAGE
+            </a>
+        </section>
 
-      <div class="whatsnext">
-        <h1>WHAT’S NEXT</h1>
-        <h2>Let’s work together</h2>
-        <p>
-          If you'd like to talk about a project you want help with or need an
-          advice about product design, just drop me a message at
-          itsmemountain@gmail.com. I'm currently Available for any design systems
-          projects, dashboard designs or landing pages gigs.
-        </p>
-        <div class="sendmessage">
-          <a href="">SEND MESSAGE <img src="images/ep_message.svg" alt="" /></a>
-          <hr />
-        </div>
-      </div>
-
-      <!-- end of let's work together -->
-
-      <!-- credit -->
-
-      <div class="credit">
-        <marquee>
-        <h1>Its me Mountain welcome Here;</h1>
-      </marquee>
-      </div>
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">© 2023 Himal Bhandari. All rights reserved.</p>
+        </footer>
     </div>
-  </body>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Add animation to elements on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.skill-card, .timeline-item, .client-logo').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
