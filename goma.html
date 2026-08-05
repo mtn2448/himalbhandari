@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Goma ❤️ from Himal</title>
+    <style>
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: radial-gradient(ellipse at 30% 20%, #1a0a1a 0%, #0d050d 50%, #050105 100%);
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* ============================================================
+           ANIMATED BACKGROUND ORBS
+        ============================================================ */
+        .bg-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: orbFloat 20s infinite ease-in-out;
+        }
+
+        .orb:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 180, 50, 0.08);
+            top: -15%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+        .orb:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 100, 50, 0.06);
+            bottom: -25%;
+            right: -15%;
+            animation-delay: -7s;
+        }
+        .orb:nth-child(3) {
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 200, 50, 0.05);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+        .orb:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 150, 50, 0.04);
+            top: 20%;
+            right: 5%;
+            animation-delay: -4s;
+        }
+        .orb:nth-child(5) {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 100, 50, 0.04);
+            bottom: 10%;
+            left: 5%;
+            animation-delay: -10s;
+        }
+
+        @keyframes orbFloat {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            25% {
+                transform: translate(40px, -40px) scale(1.1) rotate(5deg);
+            }
+            50% {
+                transform: translate(-30px, 30px) scale(0.9) rotate(-3deg);
+            }
+            75% {
+                transform: translate(30px, 40px) scale(1.05) rotate(4deg);
+            }
+        }
+
+        /* ============================================================
+           FLOATING SPARKLES
+        ============================================================ */
+        .sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .sparkle {
+            position: absolute;
+            border-radius: 50%;
+            animation: sparkleFloat var(--duration) infinite linear;
+        }
+
+        @keyframes sparkleFloat {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================================
+           MAIN CARD
+        ============================================================ */
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(20, 8, 18, 0.6);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 80px 80px 50px 50px;
+            padding: 2rem 2rem 2.8rem;
+            max-width: 650px;
+            width: 100%;
+            border: 1px solid rgba(255, 200, 150, 0.1);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(255, 200, 150, 0.05),
+                0 0 100px rgba(255, 150, 50, 0.03);
+            text-align: center;
+            animation: cardFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 200, 150, 0.3), transparent);
+            border-radius: 50%;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 200, 150, 0.15), transparent);
+            border-radius: 50%;
+        }
+
+        /* ============================================================
+           MARIGOLD CONTAINER
+        ============================================================ */
+        .marigold-container {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto 15px;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ============================================================
+           MARIGOLD - PURE CSS WITH ANIMATION
+        ============================================================ */
+        .marigold {
+            position: relative;
+            width: 340px;
+            height: 340px;
+            animation: flowerFloat 7s ease-in-out infinite;
+        }
+
+        @keyframes flowerFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg) scale(1);
+            }
+            50% {
+                transform: translateY(-18px) rotate(2deg) scale(1.02);
+            }
+        }
+
+        /* --- PETAL BASE --- */
+        .petal-m {
+            position: absolute;
+            border-radius: 50% 50% 50% 0;
+            transform-origin: bottom center;
+            opacity: 0.92;
+            box-shadow: inset -2px -2px 15px rgba(0, 0, 0, 0.15),
+                inset 2px 2px 15px rgba(255, 200, 100, 0.1),
+                0 0 20px rgba(255, 150, 50, 0.05);
+            animation: petalSway var(--sway-duration, 4s) ease-in-out infinite alternate;
+        }
+
+        @keyframes petalSway {
+            0% {
+                transform: rotate(var(--rot)) scale(1) translateY(0);
+            }
+            100% {
+                transform: rotate(var(--rot)) scale(1.03) translateY(-2px);
+            }
+        }
+
+        /* --- LAYER 1: OUTER PETALS (12) - Marigold characteristic --- */
+        .petal-o1 {
+            --rot: 0deg;
+            --sway-duration: 4.2s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(0deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0s;
+        }
+        .petal-o2 {
+            --rot: 30deg;
+            --sway-duration: 4.5s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(30deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.3s;
+        }
+        .petal-o3 {
+            --rot: 60deg;
+            --sway-duration: 3.8s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(60deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.6s;
+        }
+        .petal-o4 {
+            --rot: 90deg;
+            --sway-duration: 4.7s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(90deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.9s;
+        }
+        .petal-o5 {
+            --rot: 120deg;
+            --sway-duration: 4.0s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(120deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.2s;
+        }
+        .petal-o6 {
+            --rot: 150deg;
+            --sway-duration: 4.3s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(150deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.5s;
+        }
+        .petal-o7 {
+            --rot: 180deg;
+            --sway-duration: 4.8s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(180deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.8s;
+        }
+        .petal-o8 {
+            --rot: 210deg;
+            --sway-duration: 3.6s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(210deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.1s;
+        }
+        .petal-o9 {
+            --rot: 240deg;
+            --sway-duration: 4.4s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(240deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.4s;
+        }
+        .petal-o10 {
+            --rot: 270deg;
+            --sway-duration: 4.1s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(270deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.7s;
+        }
+        .petal-o11 {
+            --rot: 300deg;
+            --sway-duration: 4.6s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(300deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 3.0s;
+        }
+        .petal-o12 {
+            --rot: 330deg;
+            --sway-duration: 3.9s;
+            width: 80px;
+            height: 110px;
+            background: radial-gradient(ellipse at 40% 30%, #ffb84d, #f59a2a, #d4781a);
+            top: 60px;
+            left: 130px;
+            transform: rotate(330deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 3.3s;
+        }
+
+        /* --- LAYER 2: MIDDLE PETALS (12) - Slightly smaller, more orange --- */
+        .petal-m1 {
+            --rot: 15deg;
+            --sway-duration: 4.3s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(15deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.1s;
+        }
+        .petal-m2 {
+            --rot: 45deg;
+            --sway-duration: 4.6s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(45deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.4s;
+        }
+        .petal-m3 {
+            --rot: 75deg;
+            --sway-duration: 3.9s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(75deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.7s;
+        }
+        .petal-m4 {
+            --rot: 105deg;
+            --sway-duration: 4.8s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(105deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.0s;
+        }
+        .petal-m5 {
+            --rot: 135deg;
+            --sway-duration: 4.1s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(135deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.3s;
+        }
+        .petal-m6 {
+            --rot: 165deg;
+            --sway-duration: 4.4s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(165deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.6s;
+        }
+        .petal-m7 {
+            --rot: 195deg;
+            --sway-duration: 4.9s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(195deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.9s;
+        }
+        .petal-m8 {
+            --rot: 225deg;
+            --sway-duration: 3.7s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(225deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.2s;
+        }
+        .petal-m9 {
+            --rot: 255deg;
+            --sway-duration: 4.5s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(255deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.5s;
+        }
+        .petal-m10 {
+            --rot: 285deg;
+            --sway-duration: 4.2s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(285deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.8s;
+        }
+        .petal-m11 {
+            --rot: 315deg;
+            --sway-duration: 4.7s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(315deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 3.1s;
+        }
+        .petal-m12 {
+            --rot: 345deg;
+            --sway-duration: 4.0s;
+            width: 65px;
+            height: 90px;
+            background: radial-gradient(ellipse at 40% 30%, #ffcc66, #f5a532, #d48822);
+            top: 75px;
+            left: 138px;
+            transform: rotate(345deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 3.4s;
+        }
+
+        /* --- LAYER 3: INNER PETALS (8) - Darker orange --- */
+        .petal-i1 {
+            --rot: 0deg;
+            --sway-duration: 4.4s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(0deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.2s;
+        }
+        .petal-i2 {
+            --rot: 45deg;
+            --sway-duration: 3.8s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(45deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.5s;
+        }
+        .petal-i3 {
+            --rot: 90deg;
+            --sway-duration: 4.9s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(90deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 0.8s;
+        }
+        .petal-i4 {
+            --rot: 135deg;
+            --sway-duration: 4.2s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(135deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.1s;
+        }
+        .petal-i5 {
+            --rot: 180deg;
+            --sway-duration: 4.6s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(180deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.4s;
+        }
+        .petal-i6 {
+            --rot: 225deg;
+            --sway-duration: 4.0s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(225deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 1.7s;
+        }
+        .petal-i7 {
+            --rot: 270deg;
+            --sway-duration: 4.7s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(270deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.0s;
+        }
+        .petal-i8 {
+            --rot: 315deg;
+            --sway-duration: 4.3s;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(ellipse at 45% 35%, #ffcc44, #e8912a, #c47018);
+            top: 95px;
+            left: 145px;
+            transform: rotate(315deg);
+            border-radius: 50% 50% 50% 0;
+            animation-delay: 2.3s;
+        }
+
+        /* --- CENTER BUD - Marigold characteristic dark center --- */
+        .bud-m {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: radial-gradient(circle at 40% 30%, #8B4513, #5a2a0a, #3a1a05);
+            border-radius: 50%;
+            top: 148px;
+            left: 148px;
+            box-shadow: 0 0 50px rgba(139, 69, 19, 0.5),
+                inset 0 -4px 20px rgba(0, 0, 0, 0.3),
+                0 0 80px rgba(255, 150, 50, 0.1);
+            animation: budPulseM 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .bud-m::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 200, 100, 0.3);
+            font-size: 16px;
+            animation: budSparkleM 2s ease-in-out infinite;
+        }
+
+        .bud-m::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 200, 100, 0.2), transparent);
+            border-radius: 50%;
+            animation: centerGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes budPulseM {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(139, 69, 19, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 80px rgba(139, 69, 19, 0.7), 0 0 120px rgba(255, 150, 50, 0.15);
+            }
+        }
+
+        @keyframes budSparkleM {
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.3) rotate(180deg);
+            }
+        }
+
+        @keyframes centerGlow {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.6);
+                opacity: 0.7;
+            }
+        }
+
+        /* --- STEM --- */
+        .stem-m {
+            position: absolute;
+            bottom: -65px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 75px;
+            background: linear-gradient(to bottom, #2a6e3a, #1a4a2a, #0d2a1a);
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .stem-m::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 15px;
+            width: 35px;
+            height: 15px;
+            background: linear-gradient(135deg, #2a8a3a, #1a5a2a);
+            border-radius: 0 50% 50% 0;
+            transform: rotate(-35deg);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: leafSwayLeftM 4s ease-in-out infinite alternate;
+        }
+
+        .stem-m::after {
+            content: '';
+            position: absolute;
+            right: -18px;
+            top: 38px;
+            width: 35px;
+            height: 15px;
+            background: linear-gradient(225deg, #2a8a3a, #1a5a2a);
+            border-radius: 50% 0 0 50%;
+            transform: rotate(35deg);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: leafSwayRightM 4s ease-in-out infinite alternate;
+        }
+
+        .stem-m .leaf-extra-m {
+            position: absolute;
+            width: 28px;
+            height: 12px;
+            border-radius: 0 50% 50% 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .stem-m .leaf-extra-m:nth-child(3) {
+            left: -14px;
+            top: 55px;
+            background: linear-gradient(135deg, #2a7a3a, #1a4a2a);
+            transform: rotate(-25deg);
+            animation: leafSwayLeftM 4.5s ease-in-out infinite alternate-reverse;
+        }
+
+        .stem-m .leaf-extra-m:nth-child(4) {
+            right: -14px;
+            top: 22px;
+            background: linear-gradient(225deg, #2a7a3a, #1a4a2a);
+            transform: rotate(25deg);
+            border-radius: 50% 0 0 50%;
+            animation: leafSwayRightM 4.5s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes leafSwayLeftM {
+            0% {
+                transform: rotate(-35deg) scale(1) translateY(0);
+            }
+            100% {
+                transform: rotate(-20deg) scale(1.05) translateY(-3px);
+            }
+        }
+
+        @keyframes leafSwayRightM {
+            0% {
+                transform: rotate(35deg) scale(1) translateY(0);
+            }
+            100% {
+                transform: rotate(20deg) scale(1.05) translateY(-3px);
+            }
+        }
+
+        /* ============================================================
+           FLOWER GLOW
+        ============================================================ */
+        .flower-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 180, 50, 0.08), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: glowPulseM 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulseM {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.4);
+                opacity: 1;
+            }
+        }
+
+        /* ============================================================
+           TEXT STYLES
+        ============================================================ */
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffe6ed;
+            text-shadow: 0 0 50px rgba(255, 180, 50, 0.3),
+                0 0 100px rgba(255, 150, 50, 0.15);
+            letter-spacing: 4px;
+            margin-top: 5px;
+            font-family: 'Georgia', serif;
+        }
+
+        .title .heart {
+            color: #ff4d7a;
+            display: inline-block;
+            animation: heartBeat 1.8s ease-in-out infinite;
+            text-shadow: 0 0 50px rgba(255, 50, 100, 0.5);
+        }
+
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            14% {
+                transform: scale(1.4);
+            }
+            28% {
+                transform: scale(1);
+            }
+            42% {
+                transform: scale(1.25);
+            }
+            56% {
+                transform: scale(1);
+            }
+        }
+
+        .title .gradient-text {
+            background: linear-gradient(135deg, #ffd700, #ff6b8a, #ffd700, #ff6b8a);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .message {
+            font-size: 1.25rem;
+            color: #f0d6e0;
+            background: rgba(255, 200, 210, 0.04);
+            padding: 20px 28px;
+            border-radius: 60px;
+            margin: 18px 0 24px;
+            border: 1px solid rgba(255, 200, 150, 0.06);
+            line-height: 2.1;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 200, 100, 0.03), transparent);
+            animation: messageShine 8s ease-in-out infinite;
+        }
+
+        @keyframes messageShine {
+            0%,
+            100% {
+                transform: translate(-10%, -10%) rotate(0deg);
+            }
+            50% {
+                transform: translate(10%, 10%) rotate(5deg);
+            }
+        }
+
+        .message:hover {
+            border-color: rgba(255, 200, 150, 0.2);
+            transform: scale(1.01);
+        }
+
+        .message strong {
+            color: #ffb3c6;
+            font-weight: 600;
+            text-shadow: 0 0 30px rgba(255, 100, 150, 0.25);
+        }
+
+        .message .emoji-float {
+            display: inline-block;
+            animation: emojiFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes emojiFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) rotate(10deg) scale(1.1);
+            }
+        }
+
+        /* ============================================================
+           PROPOSE BUTTON
+        ============================================================ */
+        .propose-btn {
+            background: linear-gradient(135deg, #f5a532, #d4781a);
+            border: none;
+            padding: 20px 52px;
+            border-radius: 60px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Georgia', serif;
+            letter-spacing: 3px;
+            box-shadow: 0 8px 0 #7a4a1a,
+                0 12px 60px rgba(212, 120, 26, 0.35);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            width: 100%;
+            max-width: 320px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .propose-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+            transform: rotate(45deg);
+            animation: btnShine 4s infinite;
+        }
+
+        @keyframes btnShine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
+        .propose-btn::after {
+            content: '💖';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: heartFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+            0%,
+            100% {
+                transform: translateY(-50%) scale(1) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-60%) scale(1.2) rotate(10deg);
+            }
+        }
+
+        .propose-btn:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 0 #7a4a1a, 0 18px 70px rgba(212, 120, 26, 0.5);
+        }
+
+        .propose-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #7a4a1a, 0 10px 40px rgba(212, 120, 26, 0.4);
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .footer {
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 200, 150, 0.08);
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            color: #b88a9a;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .footer span {
+            padding: 4px 20px;
+            border-radius: 30px;
+            background: rgba(255, 200, 210, 0.03);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .footer span:hover {
+            background: rgba(255, 200, 210, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer .heart-pulse {
+            color: #ff4d7a;
+            animation: pulseHeart 1.2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulseHeart {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 650px) {
+            .card {
+                padding: 1.5rem 1.2rem 2rem;
+                border-radius: 50px 50px 35px 35px;
+            }
+
+            .title {
+                font-size: 2.4rem;
+                letter-spacing: 1px;
+            }
+
+            .message {
+                font-size: 1.05rem;
+                padding: 16px 20px;
+                line-height: 1.9;
+            }
+
+            .propose-btn {
+                font-size: 1.4rem;
+                padding: 16px 32px;
+                max-width: 270px;
+            }
+
+            .marigold {
+                width: 250px;
+                height: 250px;
+            }
+
+            .marigold-container {
+                max-width: 290px;
+            }
+
+            .petal-o1,
+            .petal-o2,
+            .petal-o3,
+            .petal-o4,
+            .petal-o5,
+            .petal-o6,
+            .petal-o7,
+            .petal-o8,
+            .petal-o9,
+            .petal-o10,
+            .petal-o11,
+            .petal-o12 {
+                width: 58px;
+                height: 80px;
+                top: 45px;
+                left: 96px;
+            }
+
+            .petal-m1,
+            .petal-m2,
+            .petal-m3,
+            .petal-m4,
+            .petal-m5,
+            .petal-m6,
+            .petal-m7,
+            .petal-m8,
+            .petal-m9,
+            .petal-m10,
+            .petal-m11,
+            .petal-m12 {
+                width: 48px;
+                height: 66px;
+                top: 55px;
+                left: 101px;
+            }
+
+            .petal-i1,
+            .petal-i2,
+            .petal-i3,
+            .petal-i4,
+            .petal-i5,
+            .petal-i6,
+            .petal-i7,
+            .petal-i8 {
+                width: 38px;
+                height: 52px;
+                top: 70px;
+                left: 106px;
+            }
+
+            .bud-m {
+                width: 34px;
+                height: 34px;
+                top: 108px;
+                left: 108px;
+            }
+
+            .bud-m::after {
+                font-size: 12px;
+            }
+
+            .bud-m::before {
+                width: 15px;
+                height: 15px;
+            }
+
+            .stem-m {
+                bottom: -50px;
+                height: 55px;
+                width: 8px;
+            }
+
+            .stem-m::before,
+            .stem-m::after {
+                width: 26px;
+                height: 12px;
+            }
+
+            .stem-m .leaf-extra-m {
+                width: 20px;
+                height: 10px;
+            }
+
+            .flower-glow {
+                width: 300px;
+                height: 300px;
+            }
+
+            .footer {
+                font-size: 0.85rem;
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .card {
+                padding: 1.2rem 0.8rem 1.5rem;
+                border-radius: 40px 40px 25px 25px;
+            }
+
+            .title {
+                font-size: 1.9rem;
+            }
+
+            .message {
+                font-size: 0.95rem;
+                padding: 12px 16px;
+                line-height: 1.8;
+            }
+
+            .propose-btn {
+                font-size: 1.2rem;
+                padding: 14px 24px;
+                max-width: 220px;
+            }
+
+            .marigold {
+                width: 200px;
+                height: 200px;
+            }
+
+            .marigold-container {
+                max-width: 230px;
+            }
+
+            .petal-o1,
+            .petal-o2,
+            .petal-o3,
+            .petal-o4,
+            .petal-o5,
+            .petal-o6,
+            .petal-o7,
+            .petal-o8,
+            .petal-o9,
+            .petal-o10,
+            .petal-o11,
+            .petal-o12 {
+                width: 46px;
+                height: 64px;
+                top: 35px;
+                left: 77px;
+            }
+
+            .petal-m1,
+            .petal-m2,
+            .petal-m3,
+            .petal-m4,
+            .petal-m5,
+            .petal-m6,
+            .petal-m7,
+            .petal-m8,
+            .petal-m9,
+            .petal-m10,
+            .petal-m11,
+            .petal-m12 {
+                width: 38px;
+                height: 52px;
+                top: 45px;
+                left: 81px;
+            }
+
+            .petal-i1,
+            .petal-i2,
+            .petal-i3,
+            .petal-i4,
+            .petal-i5,
+            .petal-i6,
+            .petal-i7,
+            .petal-i8 {
+                width: 30px;
+                height: 42px;
+                top: 56px;
+                left: 85px;
+            }
+
+            .bud-m {
+                width: 28px;
+                height: 28px;
+                top: 86px;
+                left: 86px;
+            }
+
+            .bud-m::after {
+                font-size: 10px;
+            }
+
+            .bud-m::before {
+                width: 12px;
+                height: 12px;
+            }
+
+            .stem-m {
+                bottom: -40px;
+                height: 45px;
+                width: 6px;
+            }
+
+            .stem-m::before,
+            .stem-m::after {
+                width: 20px;
+                height: 10px;
+            }
+
+            .stem-m .leaf-extra-m {
+                display: none;
+            }
+
+            .flower-glow {
+                width: 240px;
+                height: 240px;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    BACKGROUND ORBS
+    ============================================================ -->
+    <div class="bg-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <!-- ============================================================
+    SPARKLES
+    ============================================================ -->
+    <div class="sparkles" id="sparkles"></div>
+
+    <!-- ============================================================
+    MAIN CARD
+    ============================================================ -->
+    <div class="card">
+
+        <!-- ===== MARIGOLD ===== -->
+        <div class="marigold-container">
+            <div class="flower-glow"></div>
+            <div class="marigold">
+                <!-- Outer petals (12) -->
+                <div class="petal-m petal-o1"></div>
+                <div class="petal-m petal-o2"></div>
+                <div class="petal-m petal-o3"></div>
+                <div class="petal-m petal-o4"></div>
+                <div class="petal-m petal-o5"></div>
+                <div class="petal-m petal-o6"></div>
+                <div class="petal-m petal-o7"></div>
+                <div class="petal-m petal-o8"></div>
+                <div class="petal-m petal-o9"></div>
+                <div class="petal-m petal-o10"></div>
+                <div class="petal-m petal-o11"></div>
+                <div class="petal-m petal-o12"></div>
+
+                <!-- Middle petals (12) -->
+                <div class="petal-m petal-m1"></div>
+                <div class="petal-m petal-m2"></div>
+                <div class="petal-m petal-m3"></div>
+                <div class="petal-m petal-m4"></div>
+                <div class="petal-m petal-m5"></div>
+                <div class="petal-m petal-m6"></div>
+                <div class="petal-m petal-m7"></div>
+                <div class="petal-m petal-m8"></div>
+                <div class="petal-m petal-m9"></div>
+                <div class="petal-m petal-m10"></div>
+                <div class="petal-m petal-m11"></div>
+                <div class="petal-m petal-m12"></div>
+
+                <!-- Inner petals (8) -->
+                <div class="petal-m petal-i1"></div>
+                <div class="petal-m petal-i2"></div>
+                <div class="petal-m petal-i3"></div>
+                <div class="petal-m petal-i4"></div>
+                <div class="petal-m petal-i5"></div>
+                <div class="petal-m petal-i6"></div>
+                <div class="petal-m petal-i7"></div>
+                <div class="petal-m petal-i8"></div>
+
+                <!-- Center bud -->
+                <div class="bud-m"></div>
+
+                <!-- Stem with leaves -->
+                <div class="stem-m">
+                    <span class="leaf-extra-m"></span>
+                    <span class="leaf-extra-m"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TEXT ===== -->
+        <h1 class="title">
+            <span class="gradient-text">Goma</span>
+            <span class="heart">❤️</span>
+            <span class="gradient-text">Himal</span>
+        </h1>
+
+        <div class="message">
+            <strong>Goma</strong>, like this marigold blooms bright,<br>
+            my love for you shines every day. <span class="emoji-float">🌼</span><br>
+            Will you be my forever?
+        </div>
+
+        <!-- ===== BUTTON ===== -->
+        <button class="propose-btn" onclick="propose()">
+            Will you?
+        </button>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            <span>🌼 Forever & Always 🌼</span>
+            <span class="heart-pulse">❤️</span>
+            <span>✨ Goma ✨ Himal ✨</span>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // CREATE SPARKLES
+        // ============================================================
+        function createSparkles() {
+            const container = document.getElementById('sparkles');
+            const symbols = ['✦', '✧', '•', '◦', '☆', '·'];
+            for (let i = 0; i < 50; i++) {
+                const el = document.createElement('div');
+                el.className = 'sparkle';
+                const size = 2 + Math.random() * 6;
+                const duration = 14 + Math.random() * 20;
+                el.style.width = size + 'px';
+                el.style.height = size + 'px';
+                el.style.left = Math.random() * 100 + '%';
+                el.style.setProperty('--duration', duration + 's');
+                el.style.animationDelay = Math.random() * 18 + 's';
+                const colors = [
+                    `rgba(255, ${180 + Math.random() * 75}, ${50 + Math.random() * 50}, ${0.3 + Math.random() * 0.4})`,
+                    `rgba(255, ${200 + Math.random() * 55}, ${100 + Math.random() * 50}, ${0.3 + Math.random() * 0.4})`,
+                    `rgba(255, ${150 + Math.random() * 100}, ${50 + Math.random() * 50}, ${0.3 + Math.random() * 0.4})`
+                ];
+                el.style.background = colors[Math.floor(Math.random() * colors.length)];
+                el.style.boxShadow = `0 0 ${10 + Math.random() * 20}px ${3 + Math.random() * 6}px ${colors[0]}`;
+                el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                el.textContent = Math.random() > 0.7 ? symbols[Math.floor(Math.random() * symbols.length)] : '';
+                el.style.fontSize = (6 + Math.random() * 10) + 'px';
+                el.style.display = 'flex';
+                el.style.alignItems = 'center';
+                el.style.justifyContent = 'center';
+                container.appendChild(el);
+            }
+        }
+        createSparkles();
+
+        // ============================================================
+        // PROPOSAL FUNCTION
+        // ============================================================
+        function propose() {
+            alert('💖 Yes! Goma said YES! 💖\n\n— Himal will love you forever and always! 🌼❤️');
+
+            // Celebration burst
+            const emojis = ['❤️', '💖', '💕', '💗', '💓', '💘', '🌸', '✨', '🌟', '🎉', '💝', '🌼', '🌻', '💐', '🎊', '🌺'];
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.style.position = 'fixed';
+                    el.style.pointerEvents = 'none';
+                    el.style.zIndex = '9999';
+                    el.style.fontSize = (1.5 + Math.random() * 4.5) + 'rem';
+                    el.style.left = (10 + Math.random() * 80) + '%';
+                    el.style.top = (10 + Math.random() * 80) + '%';
+                    el.style.transition = 'all 3.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    el.style.opacity = '1';
+                    el.style.filter = 'drop-shadow(0 0 30px rgba(255,150,50,0.3))';
+                    el.style.transform = 'scale(1) rotate(0deg)';
+                    document.body.appendChild(el);
+
+                    const tx = (Math.random() - 0.5) * 900;
+                    const ty = -600 - Math.random() * 700;
+                    const rot = (Math.random() - 0.5) * 720;
+                    setTimeout(() => {
+                        el.style.transform = `translate(${tx}px, ${ty}px) scale(0) rotate(${rot}deg)`;
+                        el.style.opacity = '0';
+                    }, 50);
+
+                    setTimeout(() => el.remove(), 3500);
+                }, i * 35);
+            }
+        }
+    </script>
+
+</body>
+</html>
